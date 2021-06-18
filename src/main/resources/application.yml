@@ -1,0 +1,15 @@
+server:
+  port: 8080
+  error:
+    whitelabel:
+      enabled: false
+  tomcat:
+    uri-encoding: utf-8
+    max-connections: 20
+spring:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    show-sql: true
+    open-in-view: false
