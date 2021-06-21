@@ -14,19 +14,19 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@ToString
+@ToString(callSuper = true)
 @DiscriminatorValue(PackageProduct.DISCRIMINATOR_VALUE)
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class PackageProduct {
+public class PackageProduct extends Product {
 	public static final String DISCRIMINATOR_VALUE = "PACKAGE";
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long packageProductId;
 
 	@Column(name = "odr", nullable = false)
 	private Integer odr;
 
+	public PackageProduct(String productName, ProductType productType, Integer odr) {
+		super(productName, productType);
+		this.odr = odr;
+	}
 }
