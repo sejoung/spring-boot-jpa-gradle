@@ -1,19 +1,19 @@
 package io.github.sejoung.jpa.repository;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 
+import io.github.sejoung.jpa.annotation.SejoungDataJpaTest;
 import io.github.sejoung.jpa.constants.ProductType;
 import io.github.sejoung.jpa.domain.NormalProduct;
 import io.github.sejoung.jpa.domain.PackageProduct;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@DataJpaTest
+@SejoungDataJpaTest
 class ProductRepositoryTest {
 
 	@Autowired
